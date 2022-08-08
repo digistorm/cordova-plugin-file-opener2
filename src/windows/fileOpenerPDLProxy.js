@@ -1,6 +1,6 @@
 
 	var cordova = require('cordova'),
-		fileOpener2 = require('./FileOpener2');
+		fileOpenerPDL = require('./FileOpenerPDL');
 
 	var schemes = [
         { protocol: 'ms-app', getFile: getFileFromApplicationUri },
@@ -93,5 +93,5 @@
 		
 	};
 
-	require("cordova/exec/proxy").add("FileOpener2", module.exports);
+	require("cordova/exec/proxy").add("FileOpenerPDL", module.exports);
 

@@ -1,11 +1,11 @@
 # A File Opener Plugin for Cordova
 
-[![Latest Stable Version](https://img.shields.io/npm/v/cordova-plugin-file-opener2.svg)](https://www.npmjs.com/package/cordova-plugin-file-opener2) [![Total Downloads](https://img.shields.io/npm/dt/cordova-plugin-file-opener2.svg)](https://npm-stat.com/charts.html?package=cordova-plugin-file-opener2)
+[![Latest Stable Version](https://img.shields.io/npm/v/cordova-plugin-file-opener-pdl.svg)](https://www.npmjs.com/package/cordova-plugin-file-opener-pdl) [![Total Downloads](https://img.shields.io/npm/dt/cordova-plugin-file-opener-pdl.svg)](https://npm-stat.com/charts.html?package=cordova-plugin-file-opener-pdl)
 
 This plugin will open a file on your device file system with its default application.
 
 ```js
-cordova.plugins.fileOpener2.open(
+cordova.plugins.fileOpenerPDL.open(
     filePath,
     fileMIMEType,
     {
@@ -18,7 +18,7 @@ cordova.plugins.fileOpener2.open(
 ## Installation
 
 ```shell
-$ cordova plugin add cordova-plugin-file-opener2
+$ cordova plugin add cordova-plugin-file-opener-pdl
 ```
 
 ### Optional variables
@@ -26,7 +26,7 @@ $ cordova plugin add cordova-plugin-file-opener2
 This plugin requires the Android support library v4. From release `2.1.0` the version of this can be set at installation. The minimum version is `24.1.0`. Default value is `27.+`. [Check out the latest version](https://developer.android.com/topic/libraries/support-library/revisions.html).
 
 ```shell
-$ cordova plugin add cordova-plugin-file-opener2  --variable ANDROID_SUPPORT_V4_VERSION="27.+"
+$ cordova plugin add cordova-plugin-file-opener-pdl  --variable ANDROID_SUPPORT_V4_VERSION="27.+"
 ```
 
 If you are using the `cordova-android-support-gradle-release` plugin it should match the value you have set there.
@@ -38,7 +38,7 @@ The following platforms and versions are supported by the latest release:
 - Android 4.4+ / iOS 9+ / Windows / Electron
 - Cordova CLI 7.0 or higher
 
-Cordova CLI 6.0 is supported by 2.0.19, but there are a number of issues, particularly with Android builds (see [232](https://github.com/pwlin/cordova-plugin-file-opener2/issues/232) [203](https://github.com/pwlin/cordova-plugin-file-opener2/issues/203) [207](https://github.com/pwlin/cordova-plugin-file-opener2/issues/207)). Using the [cordova-android-support-gradle-release](https://github.com/dpa99c/cordova-android-support-gradle-release) plugin may help.
+Cordova CLI 6.0 is supported by 2.0.19, but there are a number of issues, particularly with Android builds (see [232](https://github.com/pwlin/cordova-plugin-file-opener-pdl/issues/232) [203](https://github.com/pwlin/cordova-plugin-file-opener-pdl/issues/203) [207](https://github.com/pwlin/cordova-plugin-file-opener-pdl/issues/207)). Using the [cordova-android-support-gradle-release](https://github.com/dpa99c/cordova-android-support-gradle-release) plugin may help.
 
 ### AndroidX Support
 
@@ -52,7 +52,7 @@ $ cordova plugin add cordova-plugin-androidx-adapter
 Just adding these plugins should be enough and no further changes are necessary.
 
 
-## fileOpener2.open(filePath, mimeType, options)
+## fileOpenerPDL.open(filePath, mimeType, options)
 
 Opens a file
 
@@ -67,7 +67,7 @@ Opens a file
 Open an APK install dialog:
 
 ```javascript
-cordova.plugins.fileOpener2.open(
+cordova.plugins.fileOpenerPDL.open(
     '/Downloads/gmail.apk',
     'application/vnd.android.package-archive'
 );
@@ -76,7 +76,7 @@ cordova.plugins.fileOpener2.open(
 Open a PDF document with the default PDF reader and optional callback object:
 
 ```js
-cordova.plugins.fileOpener2.open(
+cordova.plugins.fileOpenerPDL.open(
     '/Download/starwars.pdf', // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Downloads/starwars.pdf
     'application/pdf',
     {
@@ -105,7 +105,7 @@ or in code:
 window.open("[market:// or itms-apps:// link]","_system");
 ```
 
-## fileOpener2.showOpenWithDialog(filePath, mimeType, options)
+## fileOpenerPDL.showOpenWithDialog(filePath, mimeType, options)
 
 Opens with system modal to open file with an already installed app.
 
@@ -117,7 +117,7 @@ Opens with system modal to open file with an already installed app.
 ### Quick Example
 
 ```js
-cordova.plugins.fileOpener2.showOpenWithDialog(
+cordova.plugins.fileOpenerPDL.showOpenWithDialog(
     '/Downloads/starwars.pdf', // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Downloads/starwars.pdf
     'application/pdf',
     {
@@ -133,7 +133,7 @@ cordova.plugins.fileOpener2.showOpenWithDialog(
 ```
 `position` array of coordinates from top-left device screen, use for iOS dialog positioning.
 
-## fileOpener2.uninstall(packageId, callbackContext)
+## fileOpenerPDL.uninstall(packageId, callbackContext)
 
 Uninstall a package with its ID. 
 
@@ -145,7 +145,7 @@ __Note__: You need to add `<uses-permission android:name="android.permission.REQ
 
 ### Quick Example
 ```js
-cordova.plugins.fileOpener2.uninstall('com.zynga.FarmVille2CountryEscape', {
+cordova.plugins.fileOpenerPDL.uninstall('com.zynga.FarmVille2CountryEscape', {
     error : function(e) {
         console.log('Error status: ' + e.status + ' - Error message: ' + e.message);
     },
@@ -155,7 +155,7 @@ cordova.plugins.fileOpener2.uninstall('com.zynga.FarmVille2CountryEscape', {
 });
 ```
 
-## fileOpener2.appIsInstalled(packageId, callbackContext)
+## fileOpenerPDL.appIsInstalled(packageId, callbackContext)
 
 Check if an app is already installed.
 
@@ -165,7 +165,7 @@ Check if an app is already installed.
 
 ### Quick Example
 ```javascript
-cordova.plugins.fileOpener2.appIsInstalled('com.adobe.reader', {
+cordova.plugins.fileOpenerPDL.appIsInstalled('com.adobe.reader', {
     success : function(res) {
         if (res.status === 0) {
             console.log('Adobe Reader is not installed.');
@@ -203,7 +203,7 @@ It is not always possible to open a file from the SD Card using this plugin on A
 
 - For properly opening _any_ file, you must already have a suitable reader for that particular file type installed on your device. Otherwise this will not work.
 
-- [It is reported](https://github.com/pwlin/cordova-plugin-file-opener2/issues/2#issuecomment-41295793) that in iOS, you might need to remove `<preference name="iosPersistentFileLocation" value="Library" />` from your `config.xml`
+- [It is reported](https://github.com/pwlin/cordova-plugin-file-opener-pdl/issues/2#issuecomment-41295793) that in iOS, you might need to remove `<preference name="iosPersistentFileLocation" value="Library" />` from your `config.xml`
 
 - If you are wondering what MIME-type should you pass as the second argument to `open` function, [here is a list of all known MIME-types](http://svn.apache.org/viewvc/httpd/httpd/trunk/docs/conf/mime.types?view=co)
 

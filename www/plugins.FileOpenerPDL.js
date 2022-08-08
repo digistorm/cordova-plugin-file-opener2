@@ -24,28 +24,28 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 var exec = require('cordova/exec');
 
-function FileOpener2() {}
+function FileOpenerPDL() {}
 
-FileOpener2.prototype.open = function (fileName, contentType, callbackContext) {
+FileOpenerPDL.prototype.open = function (fileName, contentType, callbackContext) {
     contentType = contentType || '';
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'open', [fileName, contentType]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'open', [fileName, contentType]);
 };
 
-FileOpener2.prototype.showOpenWithDialog = function (fileName, contentType, callbackContext) {
+FileOpenerPDL.prototype.showOpenWithDialog = function (fileName, contentType, callbackContext) {
     contentType = contentType || '';
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'open', [fileName, contentType, false, callbackContext.position || [0, 0]]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'open', [fileName, contentType, false, callbackContext.position || [0, 0]]);
 };
 
-FileOpener2.prototype.uninstall = function (packageId, callbackContext) {
+FileOpenerPDL.prototype.uninstall = function (packageId, callbackContext) {
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'uninstall', [packageId]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'uninstall', [packageId]);
 };
 
-FileOpener2.prototype.appIsInstalled = function (packageId, callbackContext) {
+FileOpenerPDL.prototype.appIsInstalled = function (packageId, callbackContext) {
     callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpener2', 'appIsInstalled', [packageId]);
+    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'appIsInstalled', [packageId]);
 };
 
-module.exports = new FileOpener2();
+module.exports = new FileOpenerPDL();

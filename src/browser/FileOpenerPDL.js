@@ -122,4 +122,4 @@ module.exports = {
   open: open
 };
 
-require( "cordova/exec/proxy" ).add( "FileOpener2", module.exports );
+require( "cordova/exec/proxy" ).add( "FileOpenerPDL", module.exports );
