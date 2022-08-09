@@ -38,11 +38,6 @@ FileOpenerPDL.prototype.showOpenWithDialog = function (fileName, contentType, ca
     exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'open', [fileName, contentType, false, callbackContext.position || [0, 0]]);
 };
 
-FileOpenerPDL.prototype.uninstall = function (packageId, callbackContext) {
-    callbackContext = callbackContext || {};
-    exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'uninstall', [packageId]);
-};
-
 FileOpenerPDL.prototype.appIsInstalled = function (packageId, callbackContext) {
     callbackContext = callbackContext || {};
     exec(callbackContext.success || null, callbackContext.error || null, 'FileOpenerPDL', 'appIsInstalled', [packageId]);
