@@ -20,13 +20,13 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#import "FileOpener2.h"
+#import "FileOpenerPDL.h"
 #import <Cordova/CDV.h>
 
 #import <QuartzCore/QuartzCore.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@implementation FileOpener2
+@implementation FileOpenerPDL
 @synthesize controller = docController;
 
 CDVPluginResult* pluginResult = nil;
@@ -125,7 +125,7 @@ NSString* callbackId = nil;
 
 @end
 
-@implementation FileOpener2 (UIDocumentInteractionControllerDelegate)
+@implementation FileOpenerPDL (UIDocumentInteractionControllerDelegate)
 - (void)documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller {
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
